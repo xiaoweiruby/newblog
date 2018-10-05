@@ -1,6 +1,12 @@
-<%= @posts.each do |post| %>
+
+<table>
+<% @posts.each do |post| %>
 <div class="post_wrapper">
   <h2><%= link_to post.title, post %></h2>
   <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %>
 </div>
+
 <% end %>
+
+<%= link_to "New Post", new_post_path, class:"button" %>
+<%= link_to "Back", posts_path, class:"button" %>
